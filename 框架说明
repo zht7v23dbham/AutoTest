@@ -1,0 +1,19 @@
+Config   控制层
+Drivers  驱动配置
+Mail    发送邮件
+GetXML  解析XML文件类
+TestReport 测试报告
+Log     执行log
+
+        HTMLTestRunner  测试报告生成器
+
+        HTMLTestRunner3 基于Python3的测试报告生成器
+
+ThreadCase 线程测试案例
+seleniumTest  自动化测试案例
+testcase 接口测试案例
+
+TimeTask 定时任务
+
+MySql  链接 MySQL库
+
