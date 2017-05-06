@@ -103,7 +103,7 @@ def makeTestcase(dictData):
     keys = dictData.keys()
     for key in keys:
         #针对没一个接口，生成一个文件，写文件头信息
-        filePath = os.getcwd() + '\\testcase\\' + key + '.py'
+        filePath = os.getcwd() + '\\apiTestcase\\' + key + '.py'
         fh = open(filePath, 'w')
         fh.write('# coding=utf-8\n'
                  'import unittest\n'
@@ -213,7 +213,7 @@ def makeTestcase(dictData):
 #执行测试用例
 def executeTestcase():
     #获取所有的测试文件
-    path = os.getcwd() + '\\testcase'
+    path = os.getcwd() + '\\apiTestcase'
     fileList = os.listdir(path)
 
     moduleList = [x.split('.')[0] for x in fileList]
@@ -224,7 +224,7 @@ def executeTestcase():
     #导入所有测试模块
     mObj = []
     for mName in moduleList:
-        mObj.append(imp.load_source(mName, os.getcwd() + '\\testcase\\' + mName + '.py'))
+        mObj.append(imp.load_source(mName, os.getcwd() + '\\apiTestcase\\' + mName + '.py'))
 
     #将所有的测试模块加载到TestSuite中
     testSuite = unittest.TestSuite()
@@ -236,8 +236,9 @@ def executeTestcase():
     unittest.TextTestRunner().run(testSuite)
 
 
+
 if __name__ == "__main__":
-    fileName = "C:\\HTTPTest\\interfaceData.xlsx"
+    fileName = os.getcwd() + "\\interfaceData.xlsx"
     dictData = genSourceData(fileName)
     makeTestcase(dictData)
     executeTestcase()

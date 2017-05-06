@@ -11,8 +11,8 @@ Log     执行log
 
 ThreadCase 线程测试案例
 seleniumTest  自动化测试案例
-testcase 接口测试案例
-
+apiTestcase 接口测试案例
+seleniumTest 自动化测试
 TimeTask 定时任务
 
 MySql  链接 MySQL库

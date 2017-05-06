@@ -6,20 +6,20 @@ from selenium import webdriver
 
 class PythonOrgSearch(unittest.TestCase):
 
-    def setUp(self):
+   # def setUp(self):
+
+        #ffdriver = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe"
+
+        #os.environ["webdriver.firefox.driver"] = ffdriver
+
+        #self.driver = webdriver.Firefox(ffdriver)
+
+    def test(self):
         # firefox 实际安装路径
-        ffdriver = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe"
-
-        os.environ["webdriver.firefox.driver"] = ffdriver
-
-        self.driver = webdriver.Firefox(ffdriver)
-
-    def test_search_in_python_org(self):
-        driver = self.driver
-
-        driver.get("https://www.baidu.com")
-        driver.find_element_by_id("kw").send_keys("Selenium2")
-        driver.find_element_by_id("su").click()
+        self.driver = webdriver.Firefox()
+        self.driver.get("https://www.baidu.com")
+        self.driver.find_element_by_id("kw").send_keys("Selenium2")
+        self.driver.find_element_by_id("su").click()
 
     def tearDown(self):
         self.driver.quit()
